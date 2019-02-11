@@ -32,7 +32,7 @@ console.log(information.id) // will print out 1
 //Expected output: "Hello my name is Christopher Berrios, I am 29 years old and I am a high school teacher"
 
 
-Challenge Activities
+//Challenge Activities
 //9 Create your a JSON object of yourself. 
 //Must include your firstname, lastname, age, birthday, occupation
 
