@@ -3,7 +3,7 @@
 // To get a the value of a key we use the following format variable.key
  
 
-console.log(information.id) // will print out 1
+//console.log(information.id) // will print out 1
 
 //2 - console.log each item in the space below.
 
@@ -41,8 +41,11 @@ console.log(information.id) // will print out 1
 
 //11 Find an image of your spirit animal on Unsplash.com. Update your JSON object to include that image and have it appear when you click on your event listener. 
 
+var img = {
+ "img":"https://images.unsplash.com/photo-1525869916826-972885c91c1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+}
+console.log(img.img)
 
-
-
-
+let wrapper = document.querySelector('#wrapper')
+wrapper.innerHTML = '<img src = "' +img.img+'">'
 
