@@ -13,9 +13,9 @@ button.addEventListener("click" , e =>{
 //Now, below is a function called sendApiRequest(). Call that function in the above button click event with serachInput as it's argument
 
 // Go to https://developers.giphy.com/ and create an account. Then create your first app called testApp to create an API key. Enter it below where it says: YOUR_API_KEY_GOES_HERE.
-function sendApiRequest() {
+function sendApiRequest(x) {
   
-    fetch("https://api.giphy.com/v1/gifs/search?api_key=IQyyjwWA9o2rpqUAfNuwx4yY1pjN4Fu2&q=spongebob&limit=25&offset=0&rating=G&lang=en")
+    fetch("https://api.giphy.com/v1/gifs/search?api_key=IQyyjwWA9o2rpqUAfNuwx4yY1pjN4Fu2&q="+x+"&limit=25&offset=0&rating=G&lang=en")
     .then(function(data) {
       return data.json();
     })
@@ -27,7 +27,6 @@ function sendApiRequest() {
 };
 
 // Get a specific image URL ending in .gif from your JSON search results. Pass it on to the next function.
-getImageURLfrom("https://media.giphy.com/media/9u1kwNLzdvGPcWCHHA/giphy.gif")
 function getImageURLfrom(myJSON) {
     //create  a const called imageURL and set it to equal myJSON.data[0].images.original.url 
   const imageURL = myJSON.date[Math.floor(Math.random() * 25)].images.original.url
@@ -39,11 +38,10 @@ function getImageURLfrom(myJSON) {
 };
 
   //querySelect the wrapper, and add an image tag to it. Interpolate the URL string from the previous function.
-  document.querySelector("#wrapper") 
 function addImageToScreen(myURL) {
   //Now create a variable called wrapper and querySelect the div with an id of wrapper
   let wrapper = document.querySelector("#wrapper")
-  wrapper.innerHTML = "<img src ='myURL + 0'>"
+  wrapper.innerHTML = "<img src ='"+ myURL+ "'>"
   //Next call the .innerHTML method on your wrapper varible and set it equal to the following string "<img src = ''>"
   //Where the single quotes are located concactenate your myURL parameter to the img tag element.
   
